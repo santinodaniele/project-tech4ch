@@ -9,6 +9,8 @@ Then, we built our **Model** classes:
 * Museum, this class stores all the previous information
 
 We implemented **Generator** classes which retrieve data from the database and then create our model classes. After this we coded some auxiliary methods to create some statistics about the visitors: best holding power pois, best attraction power pois, general statistics about pois, musuem visitors per hour, museum visitors per room per hour. Every statistics is generated graphically using CanavasJS library.
+## Home
+![Home](/readme_images/home.png)
 ## Best attraction power POIs
 ![Best attraction power POIs](/readme_images/bestAttraction.png)
 ## Best holding power POIs

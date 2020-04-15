@@ -29,9 +29,8 @@ We decided to generate charts for the statistics, so we used CanavasJS library t
 ![Visitor per room per hour in the museum](/readme_images/vprh.png)
 
 ### Useful links
-![GitHub Repository](https://github.com/alexandruRopotica/project-tech4ch)<br>
-![Google Drive](https://drive.google.com/drive/my-drive)<br>
-![Web Service]()<br>
+[Google Drive](https://drive.google.com/drive/folders/19QWEDkNJqjvCK_xBAprgXK5Eo-fnBnlB?usp=sharing>)  
+[Web Service]()
 ### Work distribution
 * Database, Daniele and Federico designed and implemented the database structure and Alexandru helped formatting the csv files with AWK scripts
 * Dynamic Web Project, Alexandru implemented the structure of the project, Daniele and Federico reviewed the code and made some tweaks

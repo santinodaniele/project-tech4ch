@@ -30,7 +30,7 @@ We decided to generate charts for the statistics, so we used CanavasJS library t
 
 ### Useful links
 ![GitHub Repository](https://github.com/alexandruRopotica/project-tech4ch)<br>
-![Google Drive](https://drive.google.com/open?id=19QWEDkNJqjvCK_xBAprgXK5Eo-fnBnlB)<br>
+![Google Drive](https://drive.google.com/drive/folders/19QWEDkNJqjvCK_xBAprgXK5Eo-fnBnlB)<br>
 ![Web Service]()<br>
 ### Work distribution
 * Database, Daniele and Federico designed and implemented the database structure and Alexandru helped formatting the csv files with AWK scripts

@@ -30,6 +30,9 @@ String dataPoints = gsonObj.toJson(list);
 			title : {
 				text : "Best attraction power POIs",
 			},
+			axisY:{
+				title:"Visitors"
+			},
 			data : [ {
 				type : "bar",
 				dataPoints : <%out.print(dataPoints);%>

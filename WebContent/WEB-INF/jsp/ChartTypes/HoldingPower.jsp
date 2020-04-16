@@ -31,6 +31,9 @@ String dataPoints = gsonObj.toJson(list);
 			title : {
 				text : "Best holding power POIs"
 			},
+			axisY:{
+				title:"Minutes"
+			},
 			data : [ {
 				fontsize : 10,
 				type : "bar",

@@ -48,7 +48,7 @@ String dataPoints = gsonObj.toJson(list);
                indexLabel: "Time slot: {label}",
                startAngle: -20,
                showInLegend: true,
-               toolTipContent: "{y} visitatori",
+               toolTipContent: "{y} visitors",
                dataPoints: <%out.print(dataPoints);%>              
            }
            ]

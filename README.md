@@ -30,7 +30,7 @@ We decided to generate charts for the statistics, so we used CanavasJS library t
 
 ### Useful links
 [Google Drive](https://drive.google.com/drive/folders/19QWEDkNJqjvCK_xBAprgXK5Eo-fnBnlB?usp=sharing>)  
-[Web Service]()
+[Web Service](http://tech4chproject-env.eba-t5wipbv2.us-east-1.elasticbeanstalk.com)
 ### Work distribution
 * Database, Daniele and Federico designed and implemented the database structure and Alexandru helped formatting the csv files with AWK scripts
 * Dynamic Web Project, Alexandru implemented the structure of the project, Daniele and Federico reviewed the code and made some tweaks

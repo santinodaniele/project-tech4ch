@@ -1,8 +1,8 @@
 -- MySQL dump 10.13  Distrib 8.0.19, for macos10.15 (x86_64)
 --
--- Host: localhost    Database: tech4ch
+-- Host: tech4ch-project.cclquzyzj2fm.us-east-1.rds.amazonaws.com    Database: tech4ch
 -- ------------------------------------------------------
--- Server version	8.0.19
+-- Server version	5.7.22-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -23,15 +23,15 @@ DROP TABLE IF EXISTS `position`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `position` (
-  `id_position` int NOT NULL AUTO_INCREMENT,
-  `id_visitor` int DEFAULT NULL,
+  `id_position` int(11) NOT NULL AUTO_INCREMENT,
+  `id_visitor` int(11) DEFAULT NULL,
   `poi_name` varchar(33) DEFAULT NULL,
   `start_time` time(3) DEFAULT NULL,
   `finish_time` time(3) DEFAULT NULL,
   PRIMARY KEY (`id_position`),
   KEY `id_visitor` (`id_visitor`),
   CONSTRAINT `position_ibfk_1` FOREIGN KEY (`id_visitor`) REFERENCES `visitor` (`id_visitor`)
-) ENGINE=InnoDB AUTO_INCREMENT=13176 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13176 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -52,10 +52,10 @@ DROP TABLE IF EXISTS `visitor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `visitor` (
-  `id_visitor` int NOT NULL,
-  `group_number` int DEFAULT NULL,
+  `id_visitor` int(11) NOT NULL,
+  `group_number` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_visitor`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -77,4 +77,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-02 16:28:57
+-- Dump completed on 2020-04-16 13:12:28

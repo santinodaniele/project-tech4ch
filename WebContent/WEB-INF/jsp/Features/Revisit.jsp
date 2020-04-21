@@ -6,6 +6,7 @@ var canvas = d3.select("body").append("svg");
 
 var array = [400,300,120,140,160,200]
 
+
 var posizioneVisitatori = {
     "visitor1":[
         canvas.append("circle")

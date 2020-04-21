@@ -10,19 +10,11 @@ public class Poi {
 	private int totalSeconds;
 	private Position position;
 	
-	//TODO da togliere
-	public Poi(String name) {
-		this.name = name;
-		this.totalVisitors = 0;
-		this.totalSeconds = 0;
-	}
-	
 	public Poi(String name, int x, int y) {
 		this.name = name;
 		this.totalVisitors = 0;
 		this.totalSeconds = 0;
-		this.position.setX(x);
-		this.position.setY(y);
+		this.position = new Position(x, y);
 	}
 	
 	public String getName() {

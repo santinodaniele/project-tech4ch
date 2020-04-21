@@ -21,5 +21,17 @@
 		</li>
 		<!-- /chart types -->
 		<li role="separator" class="divider"></li>
+		<!--  features -->
+		<li data-toggle="collapse" href="#features" aria-expanded="false"
+			aria-controls="features"><a href="#"> <i class="fa fa-flask"
+				aria-hidden="true"></i> <span>FEATURES</span>
+		</a></li>
+		<li>
+			<ul id="features" class="sub-menu collapse ${fn:contains(pageContext.request.requestURI,'features') ? 'in' : ''}">
+				<li><a href="${pageContext.request.contextPath}/revisit">Revisit a visit</a></li>
+			</ul>
+		</li>
+		<!--  /features -->
+		<li role="separator" class="divider"></li>
 	</ul>
 </div>

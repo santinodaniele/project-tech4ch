@@ -8,11 +8,21 @@ public class Poi {
 	private String name;
 	private int totalVisitors;
 	private int totalSeconds;
+	private Position position;
 	
+	//TODO da togliere
 	public Poi(String name) {
 		this.name = name;
 		this.totalVisitors = 0;
 		this.totalSeconds = 0;
+	}
+	
+	public Poi(String name, int x, int y) {
+		this.name = name;
+		this.totalVisitors = 0;
+		this.totalSeconds = 0;
+		this.position.setX(x);
+		this.position.setY(y);
 	}
 	
 	public String getName() {
@@ -37,6 +47,14 @@ public class Poi {
 
 	public void setTotalSeconds(int totalSeconds) {
 		this.totalSeconds = totalSeconds;
+	}
+
+	public Position getPosition() {
+		return position;
+	}
+
+	public void setPosition(Position position) {
+		this.position = position;
 	}
 
 	@Override

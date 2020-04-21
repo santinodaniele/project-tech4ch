@@ -9,65 +9,65 @@ public class PoiGenerator {
 	public ArrayList<Poi> initPois() {
 		
 		ArrayList<Poi> poiList = new ArrayList<Poi>();
+		
+		Poi entranceReubenHecht = new Poi("EntranceReubenHecht", 1088, 580);
+		Poi symbolsJewishMenorah = new Poi("SymbolsJewishMenorah", 1027, 323);
+		Poi persianCult = new Poi("PersianCult", 956, 623);
+		Poi jerusalemPhoto = new Poi("JerusalemPhoto", 871, 629);
+		
+		Poi museumMotto = new Poi("MuseumMotto", 871, 351);
+		Poi entranceGallileeRebellion = new Poi("EntranceGallileeRebellion", 860, 260);
+		Poi duckBoxIvories = new Poi("DuckBoxIvories", 914, 227);
+		Poi canaaniteStelae = new Poi("CanaaniteStelae", 914, 188);
+		Poi ivoryWomanPhoenician = new Poi("IvoryWomanPhoenician", 1008, 210);
+		Poi clayAmphorae = new Poi("ClayAmphorae", 1043, 226);
+		Poi animalModels = new Poi("AnimalModels", 993, 324);
+		Poi elevator1 = new Poi("Elevator1", 867, 188);
 
-		Poi entranceReubenHecht = new Poi("EntranceReubenHecht");
-		Poi symbolsJewishMenorah = new Poi("SymbolsJewishMenorah");
-		Poi persianCult = new Poi("PersianCult");
-		Poi jerusalemPhoto = new Poi("JerusalemPhoto");
+		Poi stairsToBathroom = new Poi("StairsToBathroom", 724, 179);
+		Poi bronzeTools = new Poi("BronzeTools", 826, 320);
+		Poi stoneVesselsBowl = new Poi("StoneVesselsBowl", 758, 416);
+		Poi mosaicfromSynagogue = new Poi("MosaicfromSynagogue", 799, 396);
+		Poi glassOvenVessels = new Poi("GlassOvenVessels", 742, 296);
+		Poi woodenTools = new Poi("WoodenTools", 639, 432);
 
-		Poi museumMotto = new Poi("MuseumMotto");
-		Poi entranceGallileeRebellion = new Poi("EntranceGallileeRebellion");
-		Poi duckBoxIvories = new Poi("DuckBoxIvories");
-		Poi canaaniteStelae = new Poi("CanaaniteStelae");
-		Poi ivoryWomanPhoenician = new Poi("IvoryWomanPhoenician");
-		Poi clayAmphorae = new Poi("ClayAmphorae");
-		Poi animalModels = new Poi("AnimalModels");
-		Poi elevator1 = new Poi("Elevator1");
+		Poi phoenicians = new Poi("Phoenicians", 823,455);
+		Poi importedPottery = new Poi("ImportedPottery", 748, 548);
+		Poi craftsAndArts = new Poi("CraftsAndArts", 759, 511);
+		Poi religionAndCult = new Poi("ReligionAndCult", 723, 475);
+		Poi everydayPottery = new Poi("EverydayPottery", 684, 475);
+		Poi phoenicianWriting1 = new Poi("PhoenicianWriting1", 657, 498);
+		Poi burialTradition2 = new Poi("BurialTradition2", 650, 540);
+		Poi maritimeCommerce = new Poi("MaritimeCommerce", 702, 544);
+		Poi buildingMethodsAndFacilities = new Poi("BuildingMethodsAndFacilities", 709, 512);
 
-		Poi stairsToBathroom = new Poi("StairsToBathroom");
-		Poi bronzeTools = new Poi("BronzeTools");
-		Poi stoneVesselsBowl = new Poi("StoneVesselsBowl");
-		Poi mosaicfromSynagogue = new Poi("MosaicfromSynagogue");
-		Poi glassOvenVessels = new Poi("GlassOvenVessels");
-		Poi woodenTools = new Poi("WoodenTools");
+		Poi shipEntrance = new Poi("ShipEntrance", 597, 282);
+		Poi shipFront = new Poi("ShipFront", 543, 285);
+		Poi shipBack = new Poi("ShipBack", 497, 242);
+		Poi maritimeArcheology = new Poi("MaritimeArcheology", 385, 318);
+		Poi pottery = new Poi("Pottery", 386, 276);
+		Poi carpenterTools = new Poi("CarpenterTools", 385, 211);
 
-		Poi phoenicians = new Poi("Phoenicians");
-		Poi importedPottery = new Poi("ImportedPottery");
-		Poi craftsAndArts = new Poi("CraftsAndArts");
-		Poi religionAndCult = new Poi("ReligionAndCult");
-		Poi everydayPottery = new Poi("EverydayPottery");
-		Poi phoenicianWriting1 = new Poi("PhoenicianWriting1");
-		Poi burialTradition2 = new Poi("BurialTradition2");
-		Poi maritimeCommerce = new Poi("MaritimeCommerce");
-		Poi buildingMethodsAndFacilities = new Poi("BuildingMethodsAndFacilities");
+		Poi coins = new Poi("Coins", 1145, 385);
+		Poi sevenSpecies = new Poi("SevenSpecies", 1217, 364);
+		Poi weights = new Poi("Weights", 1171, 274);
+		Poi greeceEgypt = new Poi("GreeceEgypt", 1355, 270);
+		Poi gems = new Poi("Gems", 1230, 183);
+		Poi cyprus = new Poi("Cyprus", 1332, 224);
+		Poi jerusalem = new Poi("Jerusalem", 1283, 284);
+		Poi templeMount = new Poi("TempleMount", 1221, 253);
+		Poi oilLamps = new Poi("OilLamps", 1341, 372);
+		Poi upperFloorEntrance = new Poi("UpperFloorEntrance", 1337, 424);
+		Poi elevator2 = new Poi("Elevator2", 1157, 174);
 
-		Poi shipEntrance = new Poi("ShipEntrance");
-		Poi shipFront = new Poi("ShipFront");
-		Poi shipBack = new Poi("ShipBack");
-		Poi maritimeArcheology = new Poi("MaritimeArcheology");
-		Poi pottery = new Poi("Pottery");
-		Poi carpenterTools = new Poi("CarpenterTools");
-
-		Poi coins = new Poi("Coins");
-		Poi sevenSpecies = new Poi("SevenSpecies");
-		Poi weights = new Poi("Weights");
-		Poi greeceEgypt = new Poi("GreeceEgypt");
-		Poi gems = new Poi("Gems");
-		Poi cyprus = new Poi("Cyprus");
-		Poi jerusalem = new Poi("Jerusalem");
-		Poi templeMount = new Poi("TempleMount");
-		Poi oilLamps = new Poi("OilLamps");
-		Poi upperFloorEntrance = new Poi("UpperFloorEntrance");
-		Poi elevator2 = new Poi("Elevator2");
-
-		Poi materialCultures = new Poi("MaterialCultures");
-		Poi leadCoffinMosaics = new Poi("LeadCoffinMosaics");
-		Poi chalcolitePeriod = new Poi("ChalcolitePeriod");
-		Poi jewishCoffins = new Poi("JewishCoffins");
-		Poi anthropoids = new Poi("Anthropoids");
-		Poi decoratedDoors = new Poi("DecoratedDoors");
-		Poi menorahJewishEpigraphy = new Poi("MenorahJewishEpigraphy");
-		Poi romanDivinitiesStatuettes = new Poi("RomanDivinitiesStatuettes");
+		Poi materialCultures = new Poi("MaterialCultures", 1043, 447);
+		Poi leadCoffinMosaics = new Poi("LeadCoffinMosaics", 976, 437);
+		Poi chalcolitePeriod = new Poi("ChalcolitePeriod", 909, 431);
+		Poi jewishCoffins = new Poi("JewishCoffins", 958, 477);
+		Poi anthropoids = new Poi("Anthropoids", 920, 530);
+		Poi decoratedDoors = new Poi("DecoratedDoors", 900, 562);
+		Poi menorahJewishEpigraphy = new Poi("MenorahJewishEpigraphy", 979, 558);
+		Poi romanDivinitiesStatuettes = new Poi("RomanDivinitiesStatuettes", 1043, 550);
 		
 		poiList.add(entranceReubenHecht);
 		poiList.add(symbolsJewishMenorah);

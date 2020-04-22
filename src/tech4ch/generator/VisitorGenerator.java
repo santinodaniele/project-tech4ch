@@ -15,7 +15,7 @@ public class VisitorGenerator {
 	public static final String mysqlConnectionUrl = "jdbc:mysql://tech4ch-project.cclquzyzj2fm.us-east-1.rds.amazonaws.com:3306/tech4ch?useLegacyDatetimeCode=false&serverTimezone=UTC";
 	public static final String mysqlUsername = "root";
 	public static final String mysqlPassword = "root1234";
-	public static final int usersRetrieved = 5;
+	public static final int usersRetrieved = 300;
 
 	public ArrayList<Visitor> initVisitors() throws SQLException, ClassNotFoundException {
 		Class.forName(mysqlDriver);  

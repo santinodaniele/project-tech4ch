@@ -43,10 +43,9 @@ body {
 }
 
 svg{
-	   left: 100px;
-	 
-  	width: 67%;
-  	height: 65%;
+	position:absolute;
+	width:1000px;
+	height:500px;
 	background-image: url('/resources/images/museum.jpg');
 	background-size: cover;
 }

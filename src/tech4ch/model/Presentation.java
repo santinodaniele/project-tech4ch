@@ -25,4 +25,12 @@ public class Presentation {
 	public void setTerminatedBy(String terminatedBy) {
 		this.terminatedBy = terminatedBy;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		Presentation presentation = (Presentation) obj;
+		return this.getPoiName().equals(presentation.getPoiName());
+	}
+	
+	
 }

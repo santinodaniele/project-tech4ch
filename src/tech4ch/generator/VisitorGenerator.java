@@ -4,7 +4,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import tech4ch.model.Poi;
 import tech4ch.model.Presentation;
 import tech4ch.model.Visitor;
 
@@ -12,9 +11,9 @@ import tech4ch.model.Visitor;
 public class VisitorGenerator {
 
 	public static final String mysqlDriver = "com.mysql.cj.jdbc.Driver";
-	public static final String mysqlConnectionUrl = "jdbc:mysql://tech4ch-project.cclquzyzj2fm.us-east-1.rds.amazonaws.com:3306/tech4ch?useLegacyDatetimeCode=false&serverTimezone=UTC";
+	public static final String mysqlConnectionUrl = "jdbc:mysql://localhost:3306/dbtech?useLegacyDatetimeCode=false&serverTimezone=UTC";;
 	public static final String mysqlUsername = "root";
-	public static final String mysqlPassword = "root1234";
+	public static final String mysqlPassword = "root";
 	public static final int usersRetrieved = 300;
 
 	public ArrayList<Visitor> initVisitors() throws SQLException, ClassNotFoundException {
@@ -57,17 +56,19 @@ public class VisitorGenerator {
 	}
 
 	public void addPresentationToVisitor(Visitor visitor, String startTime, String finishTime, String poiName, String terminatedBy) {
-		int totalSeconds = parseString2Seconds(startTime, finishTime);
 		Presentation presentation = new Presentation(poiName, terminatedBy);
-		HashMap<Presentation, Integer> presentation2seconds = visitor.getPresentation2seconds();
-		if(presentation2seconds.containsKey(presentation)) {
-			int updateTime = presentation2seconds.get(presentation) + totalSeconds;
-			presentation2seconds.put(presentation, updateTime);
+		if(!visitor.getPresentationList().contains(presentation)) {
+			visitor.addPresentation(presentation);
+		}
+		int totalSeconds = parseString2Seconds(startTime, finishTime);
+		HashMap<String, Integer> presentation2seconds = visitor.getPresentation2seconds();
+		if(presentation2seconds.containsKey(poiName)) {
+			int updateTime = presentation2seconds.get(poiName) + totalSeconds;
+			presentation2seconds.put(poiName, updateTime);
 		}
 		else {
-			presentation2seconds.put(presentation, totalSeconds);
+			presentation2seconds.put(poiName, totalSeconds);
 		}
-		
 	}
 	
 	public void createVisitor(Visitor visitor, String startTime, String finishTime, String poiName, String groupNumber) {

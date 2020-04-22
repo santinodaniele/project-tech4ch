@@ -3,10 +3,7 @@ package tech4ch.generator;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.TreeMap;
-
-import tech4ch.generator.PoiGenerator;
-import tech4ch.generator.RoomGenerator;
-import tech4ch.generator.VisitorGenerator;
+	
 import tech4ch.model.Museum;
 import tech4ch.model.Poi;
 import tech4ch.model.Room;

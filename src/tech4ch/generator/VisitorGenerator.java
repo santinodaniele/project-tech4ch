@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import tech4ch.model.Poi;
+import tech4ch.model.Presentation;
 import tech4ch.model.Visitor;
 
 
@@ -14,7 +15,7 @@ public class VisitorGenerator {
 	public static final String mysqlConnectionUrl = "jdbc:mysql://tech4ch-project.cclquzyzj2fm.us-east-1.rds.amazonaws.com:3306/tech4ch?useLegacyDatetimeCode=false&serverTimezone=UTC";
 	public static final String mysqlUsername = "root";
 	public static final String mysqlPassword = "root1234";
-	public static final int usersRetrieved = 300;
+	public static final int usersRetrieved = 5;
 
 	public ArrayList<Visitor> initVisitors() throws SQLException, ClassNotFoundException {
 		Class.forName(mysqlDriver);  
@@ -23,21 +24,54 @@ public class VisitorGenerator {
 		ArrayList<Visitor> visitorList = new ArrayList<Visitor>();
 		int i = 0;
 		while(i != usersRetrieved) {
-			String query = "select start_time, finish_time, poi_name from position join visitor on "
+			String query = "select start_time, finish_time, poi_name , group_number from position join visitor on "
 					+ "position.id_visitor = visitor.id_visitor where position.id_visitor = " + (i+1);
 			ResultSet rs = statement.executeQuery(query);
 			Visitor visitor = new Visitor(i+1);
 			while(rs.next()) {
-				createVisitor(visitor, rs.getString(1), rs.getString(2), rs.getString(3));
+				createVisitor(visitor, rs.getString(1), rs.getString(2), rs.getString(3) , rs.getString(4));
 			}
 			visitorList.add(visitor);
 			i++;
 		}
-		connection.close();  
+		connection.close();
 		return visitorList;
 	}
+	
+	public void initPresentations(ArrayList<Visitor> visitorList) throws SQLException, ClassNotFoundException {
+		Class.forName(mysqlDriver);  
+		Connection connection = DriverManager.getConnection(mysqlConnectionUrl, mysqlUsername, mysqlPassword);   
+		Statement statement = connection.createStatement();
+		int i = 0;
+		while(i != usersRetrieved) {
+			String query = "select start_time, finish_time, poi_name , terminatedBy from presentation join visitor on "
+					+ "presentation.id_visitor = visitor.id_visitor where presentation.id_visitor = " + (i+1);
+			ResultSet rs = statement.executeQuery(query);
+			Visitor visitor = visitorList.get(i);
+			while(rs.next()) {
+				addPresentationToVisitor(visitor, rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4));
+			}
+			i++;
+		}
+		connection.close();
+	}
 
-	public void createVisitor(Visitor visitor, String startTime, String finishTime, String poiName) {
+	public void addPresentationToVisitor(Visitor visitor, String startTime, String finishTime, String poiName, String terminatedBy) {
+		int totalSeconds = parseString2Seconds(startTime, finishTime);
+		Presentation presentation = new Presentation(poiName, terminatedBy);
+		HashMap<Presentation, Integer> presentation2seconds = visitor.getPresentation2seconds();
+		if(presentation2seconds.containsKey(presentation)) {
+			int updateTime = presentation2seconds.get(presentation) + totalSeconds;
+			presentation2seconds.put(presentation, updateTime);
+		}
+		else {
+			presentation2seconds.put(presentation, totalSeconds);
+		}
+		
+	}
+	
+	public void createVisitor(Visitor visitor, String startTime, String finishTime, String poiName, String groupNumber) {
+		visitor.setGroupId(Integer.parseInt(groupNumber));
 		int totalSeconds = parseString2Seconds(startTime, finishTime);
 		HashMap<String, Integer> poi2seconds = visitor.getPoi2seconds();
 		if(poi2seconds.containsKey(poiName)) {

@@ -11,6 +11,7 @@ import tech4ch.model.Museum;
 import tech4ch.model.Poi;
 import tech4ch.model.Room;
 import tech4ch.stats.MuseumStats;
+import tech4ch.stats.VisitorStats;
 
 public class MuseumGenerator {
 	private static Museum museum;
@@ -18,6 +19,7 @@ public class MuseumGenerator {
 	private static VisitorGenerator visitorGen;
 	private static PoiGenerator poiGen;
 	private static MuseumStats museumStats;
+	private static VisitorStats visitorStats;
 	
 	public MuseumGenerator() {
 		MuseumGenerator.museum = new Museum();
@@ -25,12 +27,16 @@ public class MuseumGenerator {
 		MuseumGenerator.visitorGen = new VisitorGenerator();
 		MuseumGenerator.poiGen = new PoiGenerator();
 		MuseumGenerator.museumStats = new MuseumStats();
+		MuseumGenerator.visitorStats = new VisitorStats();
 	}
 
 	public static void initMuseum() throws ClassNotFoundException, SQLException {
-		museum.setRoomList(roomGen.initRooms());
+		museum.setRoomList(roomGen.initRooms());	
 		museum.setVisitorList(visitorGen.initVisitors());
 		museum.setPoiList(poiGen.initPois());
+		visitorGen.initPresentations(museum.getVisitorList());
+		visitorStats.averagePresentationTime(museum.getVisitorList());
+		visitorStats.averagePresentationNumber(museum.getVisitorList());
 	}
 	
 	public static ArrayList<Poi> museumGetPoiStats(){

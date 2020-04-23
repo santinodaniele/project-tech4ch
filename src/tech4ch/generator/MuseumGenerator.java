@@ -19,7 +19,6 @@ public class MuseumGenerator {
 	private static RoomGenerator roomGen;
 	private static VisitorGenerator visitorGen;
 	private static PoiGenerator poiGen;
-	private static GraphGenerator graphGen;
 	private static MuseumStats museumStats;
 	private static VisitorStats visitorStats;
 	
@@ -37,7 +36,6 @@ public class MuseumGenerator {
 		museum.setRoomList(roomGen.initRooms());	
 		museum.setVisitorList(visitorGen.initVisitors());
 		museum.setPoiList(poiGen.initPois());
-		//museum.setMuseumGraph(graphGen.initGraph());
 		visitorGen.initPresentations(museum.getVisitorList());
 		visitorStats.averagePresentationTime(museum.getVisitorList());
 		//visitorStats.averagePresentationNumber(museum.getVisitorList());
@@ -62,12 +60,6 @@ public class MuseumGenerator {
 	
 	public static TreeMap<Integer, Integer> museumGetVisitorPerAllHours(){
 		return museumStats.getVisitorPerAllHours(museum.getVisitorList());
-	}
-	
-	public static ArrayList<Position> museumGetVisitorPath(Visitor visitor, ArrayList<Node> graph){
-		VisitorPath visitorPath =  new VisitorPath();
-		return visitorPath.getVisitorPath(visitor, museum.getMuseumGraph());
-	}
-	
+	}	
 	
 }

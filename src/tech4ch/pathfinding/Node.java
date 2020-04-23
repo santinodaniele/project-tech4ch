@@ -19,9 +19,8 @@ public class Node implements Comparable<Node>{
 		return this.poi.getPosition();
 	}
 	
-	public Node getNodeByName(String poiName) {
-		if(this.poi.getName().equals(poiName)) return this;
-		return null;
+	public Poi getPoi() {
+		return this.poi;
 	}
 	
 	public int compareTo(Node other){

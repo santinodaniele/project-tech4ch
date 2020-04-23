@@ -21,6 +21,8 @@ public class MuseumGenerator {
 	private static PoiGenerator poiGen;
 	private static MuseumStats museumStats;
 	private static VisitorStats visitorStats;
+	private static GraphGenerator graphGen;
+	private static VisitorPath visitorPath;
 	
 	
 	public MuseumGenerator() {
@@ -30,12 +32,16 @@ public class MuseumGenerator {
 		MuseumGenerator.poiGen = new PoiGenerator();
 		MuseumGenerator.museumStats = new MuseumStats();
 		MuseumGenerator.visitorStats = new VisitorStats();
+		MuseumGenerator.graphGen = new GraphGenerator();
+		MuseumGenerator.visitorPath = new VisitorPath();
+		
 	}
 
 	public static void initMuseum() throws ClassNotFoundException, SQLException {
 		museum.setRoomList(roomGen.initRooms());	
 		museum.setVisitorList(visitorGen.initVisitors());
 		museum.setPoiList(poiGen.initPois());
+		museum.setMuseumGraph(graphGen.initGraph());
 		visitorGen.initPresentations(museum.getVisitorList());
 		visitorStats.averagePresentationTime(museum.getVisitorList());
 		//visitorStats.averagePresentationNumber(museum.getVisitorList());
@@ -60,6 +66,14 @@ public class MuseumGenerator {
 	
 	public static TreeMap<Integer, Integer> museumGetVisitorPerAllHours(){
 		return museumStats.getVisitorPerAllHours(museum.getVisitorList());
-	}	
+	}
+	
+	public static Museum getMuseum() {
+		return museum;
+	}
+	
+	public static ArrayList<Node> museumGetVisitorPath(Visitor visitor){
+		return visitorPath.getVisitorPath(visitor, museum.getMuseumGraph());
+	}
 	
 }

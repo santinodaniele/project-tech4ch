@@ -1,14 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="tech4ch.generator.MuseumGenerator"%>
+<%@page import="tech4ch.pathfinding.*"%>
+<%@ page import="java.util.*"%>
+<%@ page import="tech4ch.model.Visitor"%>
 <body id="demo">
 	<svg  id="demo1">
 	</svg>
 </body>
+<%
+MuseumGenerator museumGenerator = new MuseumGenerator();
+MuseumGenerator.initMuseum();
+List<Visitor> visitorList = MuseumGenerator.getMuseum().getVisitorList();
+List<Node> path = MuseumGenerator.museumGetVisitorPath(visitorList.get(0));
+%>
 <script>
 var canvas = d3.select("svg");
 
 var array = [400,300,120,140,160,200]
-
 
 var posizioneVisitatori = {
     "visitor1":[

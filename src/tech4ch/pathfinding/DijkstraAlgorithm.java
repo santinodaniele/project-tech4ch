@@ -22,7 +22,6 @@ public class DijkstraAlgorithm {
 					v.shortestDistance = distanceFromU;
 					v.parent = u;
 					queue.add(v);
-
 				}
 			}
 		}

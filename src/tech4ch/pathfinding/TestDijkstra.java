@@ -12,12 +12,12 @@ public class TestDijkstra {
 
 		DijkstraAlgorithm dijkstra = new DijkstraAlgorithm();
 
-		Poi startingPoint = new Poi("StartingPoint", 1140, 606);
+		Poi startingPoint = new Poi("StartingPoint", 761, 466);
 		Node start = new Node(startingPoint.getName());
 
 		/*Room 1*/
-		Poi room1PathPoint1 = new Poi("Room1PathPoint1", 989, 597);
-		Poi room1PathPoint2 = new Poi("Room1PathPoint2", 871, 597);
+		Poi room1PathPoint1 = new Poi("Room1PathPoint1", 613, 459);
+		Poi room1PathPoint2 = new Poi("Room1PathPoint2", 496, 454);
 
 		Node nodeRoom1PathPoint1 = new Node(room1PathPoint1.getName());
 		Node nodeRoom1PathPoint2 = new Node(room1PathPoint2.getName());
@@ -28,12 +28,12 @@ public class TestDijkstra {
 		Node node51 = new Node("EntranceReubenHecht");
 
 		/*Room 4*/
-		Poi room4PathPoint1 = new Poi("Room4PathPoint1", 867, 454);
-		Poi room4PathPoint2 = new Poi("Room4PathPoint2", 786, 443);
-		Poi room4PathPoint3 = new Poi("Room4PathPoint3", 782, 545);
-		Poi room4PathPoint4 = new Poi("Room4PathPoint4", 731, 511);
-		Poi room4PathPoint5 = new Poi("Room4PathPoint5", 699, 529);
-		Poi room4PathPoint6 = new Poi("Room4PathPoint6", 670, 514);
+		Poi room4PathPoint1 = new Poi("Room4PathPoint1", 496, 312);
+		Poi room4PathPoint2 = new Poi("Room4PathPoint2", 417, 305);
+		Poi room4PathPoint3 = new Poi("Room4PathPoint3", 415, 408);
+		Poi room4PathPoint4 = new Poi("Room4PathPoint4", 362, 378);
+		Poi room4PathPoint5 = new Poi("Room4PathPoint5", 332, 386);
+		Poi room4PathPoint6 = new Poi("Room4PathPoint6", 298, 372);
 
 		Node nodeRoom4PathPoint1 = new Node(room4PathPoint1.getName());
 		Node nodeRoom4PathPoint2 = new Node(room4PathPoint2.getName());
@@ -53,12 +53,12 @@ public class TestDijkstra {
 		Node node66 = new Node("EverydayPottery");
 
 		/*Room 3*/
-		Poi room3PathPoint1 = new Poi("Room3PathPoint1", 828, 432);
-		Poi room3PathPoint2 = new Poi("Room3PathPoint2", 827, 406);
-		Poi room3PathPoint3 = new Poi("Room3PathPoint3", 639, 410);
-		Poi room3PathPoint4 = new Poi("Room3PathPoint4", 805, 327);
-		Poi room3PathPoint5 = new Poi("Room3PathPoint5", 648, 327);
-		Poi room3PathPoint6 = new Poi("Room3PathPoint6", 690, 242);
+		Poi room3PathPoint1 = new Poi("Room3PathPoint1", 457, 292);
+		Poi room3PathPoint2 = new Poi("Room3PathPoint2", 456, 266);
+		Poi room3PathPoint3 = new Poi("Room3PathPoint3", 271, 267);
+		Poi room3PathPoint4 = new Poi("Room3PathPoint4", 431, 192);
+		Poi room3PathPoint5 = new Poi("Room3PathPoint5", 274, 192);
+		Poi room3PathPoint6 = new Poi("Room3PathPoint6", 324, 107);
 
 		Node nodeRoom3PathPoint1 = new Node(room3PathPoint1.getName());
 		Node nodeRoom3PathPoint2 = new Node(room3PathPoint2.getName());
@@ -75,8 +75,8 @@ public class TestDijkstra {
 		Node node78 = new Node("StairsToBathroom");
 
 		/*Room 3*/
-		Poi room5PathPoint1 = new Poi("Room5PathPoint1", 542, 323);
-		Poi room5PathPoint2 = new Poi("Room5PathPoint2", 192, 320);
+		Poi room5PathPoint1 = new Poi("Room5PathPoint1", 182, 186);
+		Poi room5PathPoint2 = new Poi("Room5PathPoint2", 36, 181);
 
 		Node nodeRoom5PathPoint1 = new Node(room5PathPoint1.getName());
 		Node nodeRoom5PathPoint2 = new Node(room5PathPoint2.getName());
@@ -89,8 +89,8 @@ public class TestDijkstra {
 		Node node44 = new Node("CarpenterTools");
 
 		/*Room 2*/
-		Poi room2PathPoint1 = new Poi("Room2PathPoint1", 915, 201);
-		Poi room2PathPoint2 = new Poi("Room2PathPoint2", 1042, 251);
+		Poi room2PathPoint1 = new Poi("Room2PathPoint1", 541, 66);
+		Poi room2PathPoint2 = new Poi("Room2PathPoint2", 663, 109);
 
 		Node nodeRoom2PathPoint1 = new Node(room2PathPoint1.getName());
 		Node nodeRoom2PathPoint2 = new Node(room2PathPoint2.getName());
@@ -105,10 +105,10 @@ public class TestDijkstra {
 		Node node101 = new Node("MuseumMotto");
 		
 		/*Room 7*/
-		Poi room7PathPoint1 = new Poi("Room7PathPoint1", 1036, 423);
-		Poi room7PathPoint2 = new Poi("Room7PathPoint2", 891, 383);
-		Poi room7PathPoint3 = new Poi("Room7PathPoint3", 1041, 521);
-		Poi room7PathPoint4 = new Poi("Room7PathPoint4", 971, 526);
+		Poi room7PathPoint1 = new Poi("Room7PathPoint1", 664, 291);
+		Poi room7PathPoint2 = new Poi("Room7PathPoint2", 515, 248);
+		Poi room7PathPoint3 = new Poi("Room7PathPoint3", 656, 376);
+		Poi room7PathPoint4 = new Poi("Room7PathPoint4", 592, 390);
 		
 		Node nodeRoom7PathPoint1 = new Node(room7PathPoint1.getName());
 		Node nodeRoom7PathPoint2 = new Node(room7PathPoint2.getName());
@@ -125,11 +125,11 @@ public class TestDijkstra {
 		Node node2 = new Node("RomanDivinitiesStatuettes");
 		
 		/*Room 6*/
-		Poi room6PathPoint1 = new Poi("Room6PathPoint1", 1166, 207);
-		Poi room6PathPoint2 = new Poi("Room6PathPoint2", 1163, 384);
-		Poi room6PathPoint3 = new Poi("Room6PathPoint3", 1236, 289);
-		Poi room6PathPoint4 = new Poi("Room6PathPoint4", 1361, 361);	
-		Poi room6PathPoint5 = new Poi("Room6PathPoint5", 1348, 235);
+		Poi room6PathPoint1 = new Poi("Room6PathPoint1", 791, 68);
+		Poi room6PathPoint2 = new Poi("Room6PathPoint2", 792, 238);
+		Poi room6PathPoint3 = new Poi("Room6PathPoint3", 851, 155);
+		Poi room6PathPoint4 = new Poi("Room6PathPoint4", 982, 235);	
+		Poi room6PathPoint5 = new Poi("Room6PathPoint5", 964, 111);
 		
 		Node nodeRoom6PathPoint1 = new Node(room6PathPoint1.getName());
 		Node nodeRoom6PathPoint2 = new Node(room6PathPoint2.getName());

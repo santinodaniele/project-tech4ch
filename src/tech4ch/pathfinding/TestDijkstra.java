@@ -1,31 +1,37 @@
 package tech4ch.pathfinding;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
+import tech4ch.generator.GraphGenerator;
+import tech4ch.generator.MuseumGenerator;
+import tech4ch.model.Museum;
 import tech4ch.model.Poi;
+import tech4ch.model.Position;
+import tech4ch.model.Visitor;
 
 public class TestDijkstra {
 
 
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 
 		DijkstraAlgorithm dijkstra = new DijkstraAlgorithm();
-
 		Poi startingPoint = new Poi("StartingPoint", 761, 466);
-		Node start = new Node(startingPoint.getName());
+		Node start = new Node(startingPoint);
 
 		/*Room 1*/
 		Poi room1PathPoint1 = new Poi("Room1PathPoint1", 613, 459);
 		Poi room1PathPoint2 = new Poi("Room1PathPoint2", 496, 454);
 
-		Node nodeRoom1PathPoint1 = new Node(room1PathPoint1.getName());
-		Node nodeRoom1PathPoint2 = new Node(room1PathPoint2.getName());
+		Node nodeRoom1PathPoint1 = new Node(room1PathPoint1);
+		Node nodeRoom1PathPoint2 = new Node(room1PathPoint2);
 
-		Node node4 = new Node("SymbolsJewishMenorah");
-		Node node41 = new Node("PersianCult");
-		Node node74 = new Node("JerusalemPhoto");
-		Node node51 = new Node("EntranceReubenHecht");
+		Node node4 = new Node(new Poi("SymbolsJewishMenorah", 654, 480));
+		Node node41 = new Node(new Poi("PersianCult", 585, 481));
+		Node node74 = new Node(new Poi("JerusalemPhoto", 501, 486));
+		Node node51 = new Node(new Poi("EntranceReubenHecht", 714, 438));
 
 		/*Room 4*/
 		Poi room4PathPoint1 = new Poi("Room4PathPoint1", 496, 312);
@@ -35,22 +41,22 @@ public class TestDijkstra {
 		Poi room4PathPoint5 = new Poi("Room4PathPoint5", 332, 386);
 		Poi room4PathPoint6 = new Poi("Room4PathPoint6", 298, 372);
 
-		Node nodeRoom4PathPoint1 = new Node(room4PathPoint1.getName());
-		Node nodeRoom4PathPoint2 = new Node(room4PathPoint2.getName());
-		Node nodeRoom4PathPoint3 = new Node(room4PathPoint3.getName());
-		Node nodeRoom4PathPoint4 = new Node(room4PathPoint4.getName());
-		Node nodeRoom4PathPoint5 = new Node(room4PathPoint5.getName());
-		Node nodeRoom4PathPoint6 = new Node(room4PathPoint6.getName());
+		Node nodeRoom4PathPoint1 = new Node(room4PathPoint1);
+		Node nodeRoom4PathPoint2 = new Node(room4PathPoint2);
+		Node nodeRoom4PathPoint3 = new Node(room4PathPoint3);
+		Node nodeRoom4PathPoint4 = new Node(room4PathPoint4);
+		Node nodeRoom4PathPoint5 = new Node(room4PathPoint5);
+		Node nodeRoom4PathPoint6 = new Node(room4PathPoint6);
 
-		Node node59 = new Node("Phoenicians");
-		Node node54 = new Node("ImportedPottery");
-		Node node38 = new Node("CraftsAndArts");
-		Node node37 = new Node("MaritimeCommerce");
-		Node node34 = new Node("BuildingMethodsAndFacilities");
-		Node node65 = new Node("ReligionAndCult");
-		Node node36 = new Node("BurialTradition2");
-		Node node20 = new Node("PhoenicianWriting1");
-		Node node66 = new Node("EverydayPottery");
+		Node node59 = new Node(new Poi("Phoenicians", 453,315));
+		Node node54 = new Node(new Poi("ImportedPottery", 379, 406));
+		Node node38 = new Node(new Poi("CraftsAndArts", 390, 370));
+		Node node37 = new Node(new Poi("MaritimeCommerce", 334, 403));
+		Node node34 = new Node(new Poi("BuildingMethodsAndFacilities", 342, 371));
+		Node node65 = new Node(new Poi("ReligionAndCult", 354, 334));
+		Node node36 = new Node(new Poi("BurialTradition2", 283, 398));
+		Node node20 = new Node(new Poi("PhoenicianWriting1", 290, 358));
+		Node node66 = new Node(new Poi("EverydayPottery", 316, 336));
 
 		/*Room 3*/
 		Poi room3PathPoint1 = new Poi("Room3PathPoint1", 457, 292);
@@ -60,49 +66,49 @@ public class TestDijkstra {
 		Poi room3PathPoint5 = new Poi("Room3PathPoint5", 274, 192);
 		Poi room3PathPoint6 = new Poi("Room3PathPoint6", 324, 107);
 
-		Node nodeRoom3PathPoint1 = new Node(room3PathPoint1.getName());
-		Node nodeRoom3PathPoint2 = new Node(room3PathPoint2.getName());
-		Node nodeRoom3PathPoint3 = new Node(room3PathPoint3.getName());
-		Node nodeRoom3PathPoint4 = new Node(room3PathPoint4.getName());
-		Node nodeRoom3PathPoint5 = new Node(room3PathPoint5.getName());
-		Node nodeRoom3PathPoint6 = new Node(room3PathPoint6.getName());
+		Node nodeRoom3PathPoint1 = new Node(room3PathPoint1);
+		Node nodeRoom3PathPoint2 = new Node(room3PathPoint2);
+		Node nodeRoom3PathPoint3 = new Node(room3PathPoint3);
+		Node nodeRoom3PathPoint4 = new Node(room3PathPoint4);
+		Node nodeRoom3PathPoint5 = new Node(room3PathPoint5);
+		Node nodeRoom3PathPoint6 = new Node(room3PathPoint6);
 
-		Node node32 = new Node("WoodenTools");
-		Node node52 = new Node("StoneVesselsBowl");
-		Node node58 = new Node("MosaicfromSynagogue");
-		Node node45 = new Node("BronzeTools");
-		Node node55 = new Node("GlassOvenVessels");
-		Node node78 = new Node("StairsToBathroom");
+		Node node32 = new Node(new Poi("WoodenTools", 272, 293));
+		Node node52 = new Node(new Poi("StoneVesselsBowl",390, 277));
+		Node node58 = new Node(new Poi("MosaicfromSynagogue", 430, 258));
+		Node node45 = new Node(new Poi("BronzeTools", 456, 183));
+		Node node55 = new Node(new Poi("GlassOvenVessels", 373, 159));
+		Node node78 = new Node(new Poi("StairsToBathroom", 356, 45));
 
-		/*Room 3*/
+		/*Room 5*/
 		Poi room5PathPoint1 = new Poi("Room5PathPoint1", 182, 186);
 		Poi room5PathPoint2 = new Poi("Room5PathPoint2", 36, 181);
 
-		Node nodeRoom5PathPoint1 = new Node(room5PathPoint1.getName());
-		Node nodeRoom5PathPoint2 = new Node(room5PathPoint2.getName());
+		Node nodeRoom5PathPoint1 = new Node(room5PathPoint1);
+		Node nodeRoom5PathPoint2 = new Node(room5PathPoint2);
 
-		Node node18 = new Node("ShipEntrance");
-		Node node50 = new Node("ShipFront");
-		Node node33 = new Node("ShipBack");
-		Node node46 = new Node("MaritimeArcheology");
-		Node node21 = new Node("Pottery");
-		Node node44 = new Node("CarpenterTools");
+		Node node18 = new Node(new Poi("ShipEntrance", 230, 145));
+		Node node50 = new Node(new Poi("ShipFront", 178, 148));
+		Node node33 = new Node(new Poi("ShipBack", 132, 106));
+		Node node46 = new Node(new Poi("MaritimeArcheology", 23, 181));
+		Node node21 = new Node(new Poi("Pottery", 23, 139));
+		Node node44 = new Node(new Poi("CarpenterTools", 23, 76));
 
 		/*Room 2*/
 		Poi room2PathPoint1 = new Poi("Room2PathPoint1", 541, 66);
 		Poi room2PathPoint2 = new Poi("Room2PathPoint2", 663, 109);
 
-		Node nodeRoom2PathPoint1 = new Node(room2PathPoint1.getName());
-		Node nodeRoom2PathPoint2 = new Node(room2PathPoint2.getName());
+		Node nodeRoom2PathPoint1 = new Node(room2PathPoint1);
+		Node nodeRoom2PathPoint2 = new Node(room2PathPoint2);
 
-		Node node62 = new Node("EntranceGallileeRebellion");
-		Node node47 = new Node("DuckBoxIvories");
-		Node node72 = new Node("CanaaniteStelae");
-		Node node60 = new Node("IvoryWomanPhoenician");
-		Node node64 = new Node("ClayAmphorae");
-		Node node5 = new Node("AnimalModels");
-		Node node100 = new Node("Elevator1");
-		Node node101 = new Node("MuseumMotto");
+		Node node62 = new Node(new Poi("EntranceGallileeRebellion", 489, 124));
+		Node node47 = new Node(new Poi("DuckBoxIvories", 542, 90));
+		Node node72 = new Node(new Poi("CanaaniteStelae", 543, 53));
+		Node node60 = new Node(new Poi("IvoryWomanPhoenician", 636, 75));
+		Node node64 = new Node(new Poi("ClayAmphorae", 670, 91));
+		Node node5 = new Node(new Poi("AnimalModels", 620, 186));
+		Node node100 = new Node(new Poi("Elevator1", 501, 57));
+		Node node101 = new Node(new Poi("MuseumMotto", 506,213));
 		
 		/*Room 7*/
 		Poi room7PathPoint1 = new Poi("Room7PathPoint1", 664, 291);
@@ -570,11 +576,120 @@ public class TestDijkstra {
 		node70.neighborNodes = new Edge[]{
 				new Edge(nodeRoom6PathPoint5, 1)
 		};
-
-		dijkstra.computePaths(start);
-		List<Node> path = dijkstra.getShortestPathTo(node74);
-		System.out.println("Path: " + path);
 		
+		ArrayList<Node> graph = new ArrayList<Node>();
+		graph.add(start);
+		graph.add(nodeRoom1PathPoint1);
+		graph.add(nodeRoom1PathPoint2);
+		graph.add(node4);
+		graph.add(node41);
+		graph.add(node74);
+		graph.add(node51);
+		graph.add(nodeRoom4PathPoint1);
+		graph.add(nodeRoom4PathPoint2);
+		graph.add(nodeRoom4PathPoint3);
+		graph.add(nodeRoom4PathPoint4);
+		graph.add(nodeRoom4PathPoint5);
+		graph.add(nodeRoom4PathPoint6);
+		graph.add(node59);
+		graph.add(node54);
+		graph.add(node38);
+		graph.add(node37);
+		graph.add(node34);
+		graph.add(node65);
+		graph.add(node36);
+		graph.add(node20);
+		graph.add(node66);
+		graph.add(nodeRoom3PathPoint1);
+		graph.add(nodeRoom3PathPoint2);
+		graph.add(nodeRoom3PathPoint3);
+		graph.add(nodeRoom3PathPoint4);
+		graph.add(nodeRoom3PathPoint5);
+		graph.add(nodeRoom3PathPoint6);
+		graph.add(node32);
+		graph.add(node52);
+		graph.add(node58);
+		graph.add(node45);
+		graph.add(node55);
+		graph.add(node78);
+		graph.add(nodeRoom5PathPoint1);
+		graph.add(nodeRoom5PathPoint2);
+		graph.add(node18);
+		graph.add(node50);
+		graph.add(node33);
+		graph.add(node46);
+		graph.add(node21);
+		graph.add(node44);
+		graph.add(nodeRoom2PathPoint1);
+		graph.add(nodeRoom2PathPoint2);
+		graph.add(node62);
+		graph.add(node47);
+		graph.add(node72);
+		graph.add(node60);
+		graph.add(node64);
+		graph.add(node5);
+		graph.add(node100);
+		graph.add(node101);
+		graph.add(nodeRoom7PathPoint1);
+		graph.add(nodeRoom7PathPoint2);
+		graph.add(nodeRoom7PathPoint3);
+		graph.add(nodeRoom7PathPoint4);
+		graph.add(node63);
+		graph.add(node39);
+		graph.add(node49);
+		graph.add(node40);
+		graph.add(node56);
+		graph.add(node16);
+		graph.add(node53);
+		graph.add(node2);
+		graph.add(nodeRoom6PathPoint1);
+		graph.add(nodeRoom6PathPoint2);
+		graph.add(nodeRoom6PathPoint3);
+		graph.add(nodeRoom6PathPoint4);
+		graph.add(nodeRoom6PathPoint5);
+		graph.add(node76);
+		graph.add(node6);
+		graph.add(node8);
+		graph.add(node57);
+		graph.add(node70);
+		graph.add(node48);
+		graph.add(node61);
+		graph.add(node71);
+		graph.add(node67);
+		graph.add(node68);
+		graph.add(node3);
+		
+		
+		
+		List<Poi> poiList = new ArrayList<Poi>();
+		poiList.add(new Poi("TempleMount", 843, 117));
+		poiList.add(new Poi("JerusalemPhoto", 501, 486));
+		
+		ArrayList<Node> visitorNodes = new ArrayList<Node>();
+		visitorNodes.add(graph.get(0));
+		for(Poi p : poiList) {
+			Node node = new Node(p);
+			visitorNodes.add(node);
+		}
+		
+		for(int i = 0; i < poiList.size(); i++) {
+			dijkstra.computePaths(visitorNodes.get(i));
+			/* da fare */
+		}
+		dijkstra.computePaths(start);
+		Node finish = null;
+		int i = 0;
+		while(finish == null) {
+			finish = graph.get(i).getNodeByName(poiList.get(0).getName());
+			i++;
+		}
+		List<Node> path = dijkstra.getShortestPathTo(finish);
+		for(Node node : path) {
+			System.out.print(node.getNodePosition().getCoord()[0]);
+			System.out.print("\t");
+			System.out.print(node.getNodePosition().getCoord()[1]);
+			System.out.print("\n");
+		}
 	}
 
 }

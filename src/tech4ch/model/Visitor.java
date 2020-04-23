@@ -12,6 +12,7 @@ public class Visitor {
 	private HashMap<String, Integer> poi2seconds;
 	private HashMap<String, Integer> presentation2seconds;
 	private ArrayList<Presentation> presentationList;
+	private ArrayList<Poi> poiList;
 	
 	public Visitor(int id) {
 		this.id = id;
@@ -20,6 +21,7 @@ public class Visitor {
 		this.poi2seconds = new HashMap<String, Integer>();
 		this.presentation2seconds = new HashMap<String, Integer>();
 		this.presentationList = new ArrayList<Presentation>();
+		this.poiList = new ArrayList<Poi>();
 	}
 
 	public int getId() {
@@ -69,13 +71,25 @@ public class Visitor {
 	public void setPresentationList(ArrayList<Presentation> presentationList) {
 		this.presentationList = presentationList;
 	}
+	
+	public ArrayList<Poi> getPoiList() {
+		return poiList;
+	}
 
-	public Set<String> getPoiList(){
+	public void setPoiList(ArrayList<Poi> poiList) {
+		this.poiList = poiList;
+	}
+
+	public Set<String> getPoiSet(){
 		return this.poi2seconds.keySet();
 	}
 	
 	public void addPresentation(Presentation presentation) {
 		this.presentationList.add(presentation);
+	}
+	
+	public void addPoi(Poi poi) {
+		this.poiList.add(poi);
 	}
 	
 }

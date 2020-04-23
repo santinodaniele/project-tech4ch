@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import tech4ch.model.Poi;
 import tech4ch.model.Presentation;
 import tech4ch.model.Visitor;
 
@@ -72,6 +73,7 @@ public class VisitorGenerator {
 	}
 	
 	public void createVisitor(Visitor visitor, String startTime, String finishTime, String poiName, String groupNumber) {
+		visitor.addPoi(new Poi(poiName));
 		visitor.setGroupId(Integer.parseInt(groupNumber));
 		int totalSeconds = parseString2Seconds(startTime, finishTime);
 		HashMap<String, Integer> poi2seconds = visitor.getPoi2seconds();

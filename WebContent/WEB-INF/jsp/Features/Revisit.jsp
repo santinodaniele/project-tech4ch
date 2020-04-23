@@ -23,8 +23,14 @@ var posizioneVisitatori = {
             .attr("cx","506")
             .attr("cy","458")
             .attr("stroke","yellow")
-            .attr("stroke-width","3")
+            .attr("stroke-width","4")
             .transition()
+            .attr("cx","497")
+            .attr("cy","121")
+            .transition()
+            .attr("cx","189")
+            .attr("cy","145")
+           	.transition()
     ]
  
 }

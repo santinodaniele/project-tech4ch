@@ -10,6 +10,10 @@ public class Poi {
 	private int totalSeconds;
 	private Position position;
 	
+	public Poi(String name) {
+		this.name = name;
+	}
+	
 	public Poi(String name, int x, int y) {
 		this.name = name;
 		this.totalVisitors = 0;
@@ -56,7 +60,7 @@ public class Poi {
 	}
 	
 	public void countVisitor(Visitor visitor) {
-		Set<String> poiSet = visitor.getPoiList();
+		Set<String> poiSet = visitor.getPoiSet();
 		if(poiSet.contains(this.getName())) {
 			this.totalVisitors++;
 		}

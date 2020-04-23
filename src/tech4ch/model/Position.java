@@ -25,5 +25,10 @@ public class Position {
 	public void setY(int y) {
 		this.y = y;
 	}
+	
+	public int[] getCoord() {
+		int[] coord = {this.x, this.y};
+		return coord;
+	}
 
 }

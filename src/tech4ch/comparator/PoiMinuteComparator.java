@@ -2,7 +2,6 @@ package tech4ch.comparator;
 
 import java.util.Comparator;
 import tech4ch.model.Poi;
-import tech4ch.model.Visitor;
 
 public class PoiMinuteComparator implements Comparator<Poi> {
 

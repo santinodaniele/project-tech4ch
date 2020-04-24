@@ -2,9 +2,7 @@ package tech4ch.stats;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
-import tech4ch.model.Presentation;
 import tech4ch.model.Visitor;
 
 public class VisitorStats {

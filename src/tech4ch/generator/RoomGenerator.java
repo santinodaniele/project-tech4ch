@@ -2,7 +2,6 @@ package tech4ch.generator;
 
 import java.util.ArrayList;
 
-import tech4ch.model.Poi;
 import tech4ch.model.Room;
 
 public class RoomGenerator {

@@ -2,7 +2,7 @@
 <%@page import="tech4ch.generator.MuseumGenerator"%>
 <%@page import="tech4ch.pathfinding.*"%>
 <%@ page import="java.util.*"%>
-<%@ page import="tech4ch.model.Visitor"%>
+<%@ page import="tech4ch.model.*"%>
 <body id="demo">
 	<svg  id="demo1">
 	</svg>
@@ -10,8 +10,10 @@
 <%
 MuseumGenerator museumGenerator = new MuseumGenerator();
 MuseumGenerator.initMuseum();
-List<Visitor> visitorList = MuseumGenerator.getMuseum().getVisitorList();
-List<Node> path = MuseumGenerator.museumGetVisitorPath(visitorList.get(0));
+ArrayList<Position> visitor1path = MuseumGenerator.getVisitorPath();
+for(Position p : visitor1path){
+	System.out.println(p.getX() + " " + p.getY());
+}
 %>
 <script>
 var canvas = d3.select("svg");

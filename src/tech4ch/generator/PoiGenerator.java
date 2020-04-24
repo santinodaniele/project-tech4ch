@@ -10,11 +10,13 @@ public class PoiGenerator {
 		
 		ArrayList<Poi> poiList = new ArrayList<Poi>();
 		
+		/* Room 1*/
 		Poi entranceReubenHecht = new Poi("EntranceReubenHecht", 714, 438);
 		Poi symbolsJewishMenorah = new Poi("SymbolsJewishMenorah", 654, 480);
 		Poi persianCult = new Poi("PersianCult", 585, 481);
 		Poi jerusalemPhoto = new Poi("JerusalemPhoto", 501, 486);
 		
+		/* Room 2 */
 		Poi museumMotto = new Poi("MuseumMotto", 506,213);
 		Poi entranceGallileeRebellion = new Poi("EntranceGallileeRebellion", 489, 124);
 		Poi duckBoxIvories = new Poi("DuckBoxIvories", 542, 90);
@@ -23,7 +25,8 @@ public class PoiGenerator {
 		Poi clayAmphorae = new Poi("ClayAmphorae", 670, 91);
 		Poi animalModels = new Poi("AnimalModels", 620, 186);
 		Poi elevator1 = new Poi("Elevator1", 501, 57);
-
+		
+		/* Room 3*/
 		Poi stairsToBathroom = new Poi("StairsToBathroom", 356, 45);
 		Poi bronzeTools = new Poi("BronzeTools", 456, 183);
 		Poi stoneVesselsBowl = new Poi("StoneVesselsBowl",390, 277);
@@ -31,6 +34,7 @@ public class PoiGenerator {
 		Poi glassOvenVessels = new Poi("GlassOvenVessels", 373, 159);
 		Poi woodenTools = new Poi("WoodenTools", 272, 293);
 
+		/* Room 4 */
 		Poi phoenicians = new Poi("Phoenicians", 453,315);
 		Poi importedPottery = new Poi("ImportedPottery", 379, 406);
 		Poi craftsAndArts = new Poi("CraftsAndArts", 390, 370);
@@ -41,13 +45,15 @@ public class PoiGenerator {
 		Poi maritimeCommerce = new Poi("MaritimeCommerce", 334, 403);
 		Poi buildingMethodsAndFacilities = new Poi("BuildingMethodsAndFacilities", 342, 371);
 
+		/* Room 5 */
 		Poi shipEntrance = new Poi("ShipEntrance", 230, 145);
 		Poi shipFront = new Poi("ShipFront", 178, 148);
 		Poi shipBack = new Poi("ShipBack", 132, 106);
 		Poi maritimeArcheology = new Poi("MaritimeArcheology", 23, 181);
 		Poi pottery = new Poi("Pottery", 23, 139);
 		Poi carpenterTools = new Poi("CarpenterTools", 23, 76);
-
+		
+		/* Room 6 */
 		Poi coins = new Poi("Coins", 769, 247);
 		Poi sevenSpecies = new Poi("SevenSpecies", 839, 226);
 		Poi weights = new Poi("Weights", 795, 137);
@@ -59,9 +65,10 @@ public class PoiGenerator {
 		Poi oilLamps = new Poi("OilLamps", 961, 233);
 		Poi upperFloorEntrance = new Poi("UpperFloorEntrance", 958, 285);
 		Poi elevator2 = new Poi("Elevator2", 781, 39);
-
+		
+		/* Room 7 */
 		Poi materialCultures = new Poi("MaterialCultures", 668, 307);
-		Poi leadCoffinMosaics = new Poi("LeadCoffinMosaics", 603, 298);
+		Poi leadCoffinMosaic = new Poi("LeadCoffinMosaic", 603, 298);
 		Poi chalcolitePeriod = new Poi("ChalcolitePeriod", 537, 291);
 		Poi jewishCoffins = new Poi("JewishCoffins", 585, 337);
 		Poi anthropoids = new Poi("Anthropoids", 548, 388);
@@ -120,7 +127,7 @@ public class PoiGenerator {
 		poiList.add(elevator2);
 		
 		poiList.add(materialCultures);
-		poiList.add(leadCoffinMosaics);
+		poiList.add(leadCoffinMosaic);
 		poiList.add(chalcolitePeriod);
 		poiList.add(jewishCoffins);
 		poiList.add(anthropoids);
@@ -131,7 +138,4 @@ public class PoiGenerator {
 		return poiList;
 		
 	}
-
-
-
 }

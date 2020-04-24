@@ -1,10 +1,10 @@
 package tech4ch.model;
 
 public class Presentation {
-	
+
 	private String poiName;
 	private String terminatedBy;
-	
+
 	public Presentation(String poiName, String terminatedBy) {
 		this.poiName = poiName;
 		this.terminatedBy = terminatedBy;
@@ -31,6 +31,6 @@ public class Presentation {
 		Presentation presentation = (Presentation) obj;
 		return this.getPoiName().equals(presentation.getPoiName());
 	}
-	
-	
+
+
 }

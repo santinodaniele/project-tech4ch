@@ -3,13 +3,11 @@ package tech4ch.generator;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.TreeMap;
-	
+
 import tech4ch.model.Museum;
 import tech4ch.model.Poi;
 import tech4ch.model.Position;
 import tech4ch.model.Room;
-import tech4ch.model.Visitor;
-import tech4ch.pathfinding.Node;
 import tech4ch.pathfinding.VisitorPath;
 import tech4ch.stats.MuseumStats;
 import tech4ch.stats.VisitorStats;
@@ -21,8 +19,6 @@ public class MuseumGenerator {
 	private static PoiGenerator poiGen;
 	private static MuseumStats museumStats;
 	private static VisitorStats visitorStats;
-	private static GraphGenerator graphGen;
-	private static VisitorPath visitorPath;
 	
 	
 	public MuseumGenerator() {
@@ -32,19 +28,15 @@ public class MuseumGenerator {
 		MuseumGenerator.poiGen = new PoiGenerator();
 		MuseumGenerator.museumStats = new MuseumStats();
 		MuseumGenerator.visitorStats = new VisitorStats();
-		MuseumGenerator.graphGen = new GraphGenerator();
-		MuseumGenerator.visitorPath = new VisitorPath();
-		
 	}
 
 	public static void initMuseum() throws ClassNotFoundException, SQLException {
-		museum.setRoomList(roomGen.initRooms());	
-		museum.setVisitorList(visitorGen.initVisitors());
+		museum.setRoomList(roomGen.initRooms());
 		museum.setPoiList(poiGen.initPois());
-		museum.setMuseumGraph(graphGen.initGraph());
+		museum.setVisitorList(visitorGen.initVisitors());
 		visitorGen.initPresentations(museum.getVisitorList());
-		visitorStats.averagePresentationTime(museum.getVisitorList());
-		//visitorStats.averagePresentationNumber(museum.getVisitorList());
+		visitorStats.averagePresentationTime(museum.getVisitorList());		//TODO da rivedere
+		visitorStats.averagePresentationNumber(museum.getVisitorList());		//TODO da rivedere
 	}
 	
 	public static ArrayList<Poi> museumGetPoiStats(){
@@ -68,12 +60,12 @@ public class MuseumGenerator {
 		return museumStats.getVisitorPerAllHours(museum.getVisitorList());
 	}
 	
-	public static Museum getMuseum() {
-		return museum;
+	public static ArrayList<Position> getVisitorPath(){
+		return VisitorPath.getVisitorPath(museum.getVisitorList().get(0));
 	}
 	
-	public static ArrayList<Node> museumGetVisitorPath(Visitor visitor){
-		return visitorPath.getVisitorPath(visitor, museum.getMuseumGraph());
+	public static Museum getMuseum() {
+		return museum;
 	}
 	
 }

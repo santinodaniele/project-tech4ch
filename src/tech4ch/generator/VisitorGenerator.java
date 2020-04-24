@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import tech4ch.model.Poi;
+import tech4ch.model.Position;
 import tech4ch.model.Presentation;
 import tech4ch.model.Visitor;
 
@@ -73,7 +74,7 @@ public class VisitorGenerator {
 	}
 	
 	public void createVisitor(Visitor visitor, String startTime, String finishTime, String poiName, String groupNumber) {
-		visitor.addPoi(new Poi(poiName));
+		visitor.addPoi(new Poi(poiName, assignPosition(poiName).getX(), assignPosition(poiName).getY()));
 		visitor.setGroupId(Integer.parseInt(groupNumber));
 		int totalSeconds = parseString2Seconds(startTime, finishTime);
 		HashMap<String, Integer> poi2seconds = visitor.getPoi2seconds();
@@ -111,5 +112,16 @@ public class VisitorGenerator {
 	public int time2Hour(String time) {
 		String[] timeFormat = time.split(":");
 		return Integer.parseInt(timeFormat[0]);
+	}
+	
+	public Position assignPosition(String poiName) {
+		Position position = new Position();
+		for(Poi poi : MuseumGenerator.getMuseum().getPoiList()) {
+			if(poi.getName().equals(poiName)) {
+				position.setX(poi.getPosition().getX());
+				position.setY(poi.getPosition().getY());
+			}
+		}
+		return position;
 	}
 }

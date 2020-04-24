@@ -1,13 +1,17 @@
 package tech4ch.model;
 
 public class Position {
-	
+
 	private int x;
 	private int y;
-	
+
 	public Position(int x, int y) {
 		this.x = x;
 		this.y = y;
+	}
+
+	public Position() {
+
 	}
 
 	public int getX() {
@@ -24,11 +28,6 @@ public class Position {
 
 	public void setY(int y) {
 		this.y = y;
-	}
-	
-	public int[] getCoord() {
-		int[] coord = {this.x, this.y};
-		return coord;
 	}
 
 }

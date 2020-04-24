@@ -44,7 +44,7 @@ public class MuseumGenerator {
 		museum.setMuseumGraph(graphGen.initGraph());
 		visitorGen.initPresentations(museum.getVisitorList());
 		visitorStats.averagePresentationTime(museum.getVisitorList());
-		//visitorStats.averagePresentationNumber(museum.getVisitorList());
+		visitorStats.averagePresentationNumber(museum.getVisitorList());
 	}
 	
 	public static ArrayList<Poi> museumGetPoiStats(){

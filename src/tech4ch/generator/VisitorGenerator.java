@@ -12,9 +12,9 @@ import tech4ch.model.Visitor;
 public class VisitorGenerator {
 
 	public static final String mysqlDriver = "com.mysql.cj.jdbc.Driver";
-	public static final String mysqlConnectionUrl = "jdbc:mysql://localhost:3306/dbtech?useLegacyDatetimeCode=false&serverTimezone=UTC";;
+	public static final String mysqlConnectionUrl = "jdbc:mysql://localhost:3306/dbTech?useLegacyDatetimeCode=false&serverTimezone=UTC";;
 	public static final String mysqlUsername = "root";
-	public static final String mysqlPassword = "root";
+	public static final String mysqlPassword = "porcodio69";
 	public static final int usersRetrieved = 300;
 
 	public ArrayList<Visitor> initVisitors() throws SQLException, ClassNotFoundException {

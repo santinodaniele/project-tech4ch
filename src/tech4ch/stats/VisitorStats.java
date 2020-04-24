@@ -36,15 +36,14 @@ public class VisitorStats {
 						presentationToSeconds.put(poiName, presentationTosecondsTmp.get(poiName));
 					}
 				}
-
 			}
 		}
-
 		for(String poiName: presentationToseconds.keySet()) { 
 			int groupNumber = groupToVisitor.keySet().size();
 			int averageTime = presentationToSeconds.get(poiName)/ groupNumber;
 			presentationToSeconds.put(poiName, averageTime); 
 		}
+		System.out.println(presentationToSeconds);
 	}
 
 	public void averagePresentationNumber(ArrayList<Visitor> visitorList) {

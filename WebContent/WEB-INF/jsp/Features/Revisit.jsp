@@ -7,17 +7,14 @@
 <%@page import="com.google.gson.JsonObject"%>
 <body>	
         <svg id="plane"></svg> 
-        <div><button onclick="move()">Next</button></div>  
+        <h4><button onclick="move()">CLICK TO MOVE VISITOR</button> </h4>
         
 </body>
+
 <%
 MuseumGenerator museumGenerator = new MuseumGenerator();
 MuseumGenerator.initMuseum();
-ArrayList<Position> visitor1path = MuseumGenerator.getVisitorPath(1); 
-visitor1path.forEach(position -> {System.out.print("["+ position.getX() + ", " + position.getY() + "], ");});
-for(Position p : visitor1path){
-	System.out.println(p.getX() + " " + p.getY());
-}
+ArrayList<Position> visitor1path = MuseumGenerator.getVisitorPath(2); 
 
 /*Take all positions for the visitor*/
 ArrayList<ArrayList<Integer>> fin = new ArrayList<ArrayList<Integer>>();
@@ -28,7 +25,6 @@ for(Position p : visitor1path){
 	fin.add(fin2);
 }
 
-fin.forEach(vet -> {System.out.print("["+ vet.get(0) + ", " + vet.get(1)+ "], ");});
 
 %>
 <script>
@@ -69,7 +65,7 @@ d3.select("#plane")
 function move() {
     d3.select("#point")
         .transition()
-        .duration(2000)
+        .duration(200)
         .attr("cx", positionMyPoint[i][0])
         .attr("cy", positionMyPoint[i][1]);
     i++;

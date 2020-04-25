@@ -72,7 +72,7 @@ public class MuseumGenerator {
 	
 	public static ArrayList<Presentation> museumGetGroupPerPresentation(){
 		museumStats.getGroupNumberPerPresentation(museum.getGroup2Visitor(), museum.getPresentationList());
-		visitorStats.getGroupStats(museum.getGroup2Visitor().get(17), museum.getPresentationList(), museum.getGroup2Visitor());
+		visitorStats.getGroupStats(museum.getGroup2Visitor().get(17), museum.getPresentationList(), museum.getGroup2Visitor());		//TODO da modificare
 		return museum.getPresentationList();
 	}
 

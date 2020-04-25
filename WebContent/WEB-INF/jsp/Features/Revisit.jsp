@@ -1,20 +1,27 @@
-<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@page import="tech4ch.generator.MuseumGenerator"%>
 <%@page import="tech4ch.pathfinding.*"%>
 <%@ page import="java.util.*"%>
 <%@page import="tech4ch.model.*"%>
 <%@page import="com.google.gson.Gson"%>
 <%@page import="com.google.gson.JsonObject"%>
-<body>	
-        <svg id="plane"></svg> 
-        <h4><button onclick="move()">CLICK TO MOVE VISITOR</button> </h4>
-        
+<body>
+	<svg id="plane"></svg>
+	<button onclick="move()">CLICK TO MOVE VISITOR</button>
+	<form>
+		<input type="text" name="visitorIndex" /> 
+		<br> 
+		<input type="submit" value="Submit">
+	</form>
 </body>
 
 <%
 MuseumGenerator museumGenerator = new MuseumGenerator();
 MuseumGenerator.initMuseum();
-ArrayList<Position> visitor1path = MuseumGenerator.getVisitorPath(2); 
+String indexString = request.getParameter("visitorIndex");
+int index = Integer.parseInt(indexString);
+ArrayList<Position> visitor1path = MuseumGenerator.getVisitorPath(index); 
 
 /*Take all positions for the visitor*/
 ArrayList<ArrayList<Integer>> fin = new ArrayList<ArrayList<Integer>>();

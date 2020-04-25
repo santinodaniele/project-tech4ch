@@ -10,10 +10,7 @@
 <%
 MuseumGenerator museumGenerator = new MuseumGenerator();
 MuseumGenerator.initMuseum();
-ArrayList<Position> visitor1path = MuseumGenerator.getVisitorPath();
-for(Position p : visitor1path){
-	System.out.println(p.getX() + " " + p.getY());
-}
+ArrayList<Presentation> b = MuseumGenerator.museumGetGroupPerPresentation();
 %>
 <script>
 var canvas = d3.select("svg");

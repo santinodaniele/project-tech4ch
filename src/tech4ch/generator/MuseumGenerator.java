@@ -7,6 +7,7 @@ import java.util.TreeMap;
 import tech4ch.model.Museum;
 import tech4ch.model.Poi;
 import tech4ch.model.Position;
+import tech4ch.model.Presentation;
 import tech4ch.model.Room;
 import tech4ch.pathfinding.VisitorPath;
 import tech4ch.stats.MuseumStats;
@@ -16,6 +17,7 @@ public class MuseumGenerator {
 	private static Museum museum;
 	private static RoomGenerator roomGen;
 	private static VisitorGenerator visitorGen;
+	private static PresentationGenerator presentationGen;
 	private static PoiGenerator poiGen;
 	private static MuseumStats museumStats;
 	private static VisitorStats visitorStats;
@@ -26,6 +28,7 @@ public class MuseumGenerator {
 		MuseumGenerator.roomGen = new RoomGenerator();
 		MuseumGenerator.visitorGen = new VisitorGenerator();
 		MuseumGenerator.poiGen = new PoiGenerator();
+		MuseumGenerator.presentationGen = new PresentationGenerator();
 		MuseumGenerator.museumStats = new MuseumStats();
 		MuseumGenerator.visitorStats = new VisitorStats();
 	}
@@ -34,11 +37,10 @@ public class MuseumGenerator {
 		museum.setRoomList(roomGen.initRooms());
 		museum.setPoiList(poiGen.initPois());
 		museum.setVisitorList(visitorGen.initVisitors());
-		visitorGen.initPresentations(museum.getVisitorList());
-		visitorStats.averagePresentationTime(museum.getVisitorList());		//TODO da rivedere
-		visitorStats.averagePresentationNumber(museum.getVisitorList());		//TODO da rivedere
+		museum.setPresentationList(presentationGen.initPresentation());
+		museum.setGroup2Visitor(visitorGen.createVisitorGroup(museum.getVisitorList()));
 	}
-
+	
 	public static ArrayList<Poi> museumGetPoiStats(){
 		return museumStats.getPoiStats(museum.getVisitorList(), museum.getPoiList());
 	}
@@ -66,6 +68,12 @@ public class MuseumGenerator {
 
 	public static Museum getMuseum() {
 		return museum;
+	}
+	
+	public static ArrayList<Presentation> museumGetGroupPerPresentation(){
+		museumStats.getGroupNumberPerPresentation(museum.getGroup2Visitor(), museum.getPresentationList());
+		visitorStats.getGroupStats(museum.getGroup2Visitor().get(17), museum.getPresentationList(), museum.getGroup2Visitor());
+		return museum.getPresentationList();
 	}
 
 }

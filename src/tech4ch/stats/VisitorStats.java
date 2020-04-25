@@ -3,60 +3,42 @@ package tech4ch.stats;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import tech4ch.model.Presentation;
 import tech4ch.model.Visitor;
 
 public class VisitorStats {
 
-	public void averagePresentationTime(ArrayList<Visitor> visitorList) {
-		HashMap<String, Integer> presentationToseconds = new HashMap<>();
-		HashMap<Integer,ArrayList<Visitor>> groupToVisitor = new HashMap<>();
-		for(Visitor v : visitorList) {
-			if(groupToVisitor.containsKey(v.getGroupId())) {
-				ArrayList<Visitor> groupToVisitorTmp = groupToVisitor.get(v.getGroupId());
-				groupToVisitorTmp.add(v);
-			}
-			else {
-				ArrayList<Visitor> groupToVisitorTmp = new ArrayList<Visitor>();
-				groupToVisitorTmp.add(v);
-				groupToVisitor.put(v.getGroupId(), groupToVisitorTmp);
-			}
-		}
-		HashMap<String, Integer> presentationToSeconds = new HashMap<>();
-		for(Integer groupId : groupToVisitor.keySet()) {
-			for(Visitor v : groupToVisitor.get(groupId)) {
-				HashMap<String, Integer> presentationTosecondsTmp = v.getPresentation2seconds();
-				for(String poiName : presentationTosecondsTmp.keySet()) {
-					if(presentationToSeconds.containsKey(poiName)) {
-						int updateTime = presentationToSeconds.get(poiName) + presentationTosecondsTmp.get(poiName);
-						presentationToSeconds.put(poiName, updateTime);
-					}
-					else {
-						presentationToSeconds.put(poiName, presentationTosecondsTmp.get(poiName));
-					}
-				}
-			}
-		}
-		for(String poiName: presentationToseconds.keySet()) { 
-			int groupNumber = groupToVisitor.keySet().size();
-			int averageTime = presentationToSeconds.get(poiName)/ groupNumber;
-			presentationToSeconds.put(poiName, averageTime); 
-		}
-		System.out.println(presentationToSeconds);
-	}
 
-	public void averagePresentationNumber(ArrayList<Visitor> visitorList) {
-		HashMap<String, Integer> presentation2totalPresentationNumber = new HashMap<>();
-		for(Visitor v : visitorList) {
-			HashMap<String, Integer> presentation2totalPresentationNumberTmp = v.getPresentation2seconds();
-			for(String poiName : presentation2totalPresentationNumberTmp.keySet()) {
-				if(presentation2totalPresentationNumber.containsKey(poiName)) {
-					int updateQuantity = presentation2totalPresentationNumber.get(poiName) + 1;
-					presentation2totalPresentationNumber.put(poiName, updateQuantity);
+	public void getGroupStats(ArrayList<Visitor> groupVisitorList, ArrayList<Presentation> presentationList, HashMap<Integer, ArrayList<Visitor>> group2visitor) {
+		StringBuilder strBuilder = new StringBuilder();
+		try {
+			int presentationViewed = 0;
+			strBuilder.append("GROUP " + groupVisitorList.get(0).getGroupId() + ":\n");
+			for(Visitor v : groupVisitorList) {
+				strBuilder.append("\t" + "Visitor " + v.getId() + " watched:\n");
+				for(Presentation p : v.getPresentation2seconds().keySet()) {
+					strBuilder.append("\t\tPresentation about " + p.getPoiName() + " for " + v.getPresentation2seconds().get(p)/60 + " minutes");
+					strBuilder.append(", ended by " + p.getTerminatedBy() + ".");
+					int index = presentationList.indexOf(p);
+					//TODO debug
+					strBuilder.append(" Average time: " + presentationList.get(index).getTotalGroupSeconds()/presentationList.size() + " minutes.\n");
 				}
-				else {
-					presentation2totalPresentationNumber.put(poiName, 1);
+				presentationViewed += v.getPresentation2seconds().keySet().size();
+			}
+			strBuilder.append("This group viewed " + presentationViewed/groupVisitorList.size() + " presentations. ");
+			int groupOfOne = 0;
+			int totalGroupNumber = group2visitor.keySet().size();
+			for(Integer group : group2visitor.keySet()) {
+				if(group2visitor.get(group).size() == 2 || group2visitor.get(group).size() == 1) {
+					groupOfOne++;
 				}
 			}
+			strBuilder.append("Average presentation viewed: " + presentationList.size()/(totalGroupNumber-groupOfOne));
+
 		}
+		catch(Exception e){
+			strBuilder.append("Group doesn't exist");
+		}
+		System.out.println(strBuilder.toString());	
 	}
 }

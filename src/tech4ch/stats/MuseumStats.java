@@ -2,11 +2,14 @@ package tech4ch.stats;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.TreeMap;
+
 
 import tech4ch.comparator.PoiMinuteComparator;
 import tech4ch.comparator.PoiVisitorComparator;
 import tech4ch.model.Poi;
+import tech4ch.model.Presentation;
 import tech4ch.model.Room;
 import tech4ch.model.Visitor;
 
@@ -82,6 +85,23 @@ public class MuseumStats {
 					room.setVisited(false);
 				}
 				room.getHour2visitor().put(hour, vrph);
+			}
+		}
+	}
+
+	public void getGroupNumberPerPresentation(HashMap<Integer, ArrayList<Visitor>> group2visitor, ArrayList<Presentation> presentationList) {
+		for(Presentation p : presentationList) {
+			int totalGroupNumber = 0;
+			int totalGroupSeconds = 0;
+			for(Integer group : group2visitor.keySet()) {
+				for(Visitor v : group2visitor.get(group)) {
+					if(v.getPresentation2seconds().keySet().contains(p)) {
+						totalGroupSeconds = totalGroupSeconds + v.getPresentation2seconds().get(p);
+						totalGroupNumber++;
+					}
+				}
+				p.setTotalGroupSeconds(totalGroupSeconds/60);
+				p.setTotalGroupNumber(totalGroupNumber);
 			}
 		}
 	}

@@ -78,7 +78,6 @@
 	<!-- sidebar -->
 	<jsp:include page="sidebar.jsp" />
 	<!-- /sidebar -->
-
 	<div id="page-content-wrapper" class="page-content-toggle">
 		<div class="container-fluid">
 			<h1>${title}</h1>
@@ -94,5 +93,6 @@
 		<jsp:include page="footer.jsp" />
 		<!-- /footer -->
 	</div>
+    <!-- <jsp:include page="Features/Revisit.jsp" /> -->
 </body>
 </html>

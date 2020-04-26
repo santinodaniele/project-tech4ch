@@ -62,8 +62,15 @@ public class MuseumGenerator {
 		return museumStats.getVisitorPerAllHours(museum.getVisitorList());
 	}
 
-	public static ArrayList<Position> getVisitorPath(int index){
-		return VisitorPath.getVisitorPath(museum.getVisitorList().get(index));
+	public static ArrayList<Position> getVisitorPath(String index){
+		int visitorId = 0;
+		if(index == null) {
+			visitorId = 1;
+		}
+		else {
+			visitorId = Integer.parseInt(index);
+		}
+		return VisitorPath.getVisitorPath(museum.getVisitorList().get(visitorId));
 	}
 
 	public static Museum getMuseum() {

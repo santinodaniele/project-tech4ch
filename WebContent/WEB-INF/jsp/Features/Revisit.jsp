@@ -9,7 +9,7 @@
 <body>
 	<svg id="plane"></svg>
 	<button onclick="move()">CLICK TO MOVE VISITOR</button>
-	<form>
+	<form action="revisit">
 		<input type="text" name="visitorIndex" /> 
 		<br> 
 		<input type="submit" value="Submit">
@@ -19,8 +19,7 @@
 <%
 MuseumGenerator museumGenerator = new MuseumGenerator();
 MuseumGenerator.initMuseum();
-String indexString = request.getParameter("visitorIndex");
-int index = Integer.parseInt(indexString);
+String index = request.getParameter("visitorIndex");
 ArrayList<Position> visitor1path = MuseumGenerator.getVisitorPath(index); 
 
 /*Take all positions for the visitor*/

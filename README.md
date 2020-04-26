@@ -29,6 +29,10 @@ We decided to generate charts for the statistics, so we used CanavasJS library t
 ![Visitor per hour in the museum](/readme_images/vph.png)
 ### Visitor per room per hour in the museum
 ![Visitor per room per hour in the museum](/readme_images/vprh.png)
+### Revisit a visit feature
+![Revisit a visit](/readme_images/revisit.png)
+### Visitor summary
+![Visitor summary](/readme_images/summary.png)
 
 ### Useful links
 [Google Drive](https://drive.google.com/drive/folders/19QWEDkNJqjvCK_xBAprgXK5Eo-fnBnlB?usp=sharing>)  

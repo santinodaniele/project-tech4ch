@@ -5,6 +5,8 @@ The project goal is to replicate a study that was published at PUC, which studie
 * MYSQL database, to store data about visitors
 * Spring Boot, to create a web service following the MVC design path
 * CanvasJS, to render statistics
+* Hipster4J, to create the graph and a search algorithm
+* D3.js, to animate all transition between points
 * Amazon AWS Educate, to deploy the web service
 ### System structure
 We created a MYSQL database importing the .csv samples file and storing information about visitors. Then, we built our **Model**:
@@ -27,6 +29,10 @@ We decided to generate charts for the statistics, so we used CanavasJS library t
 ![Visitor per hour in the museum](/readme_images/vph.png)
 ### Visitor per room per hour in the museum
 ![Visitor per room per hour in the museum](/readme_images/vprh.png)
+### Revisit a visit feature
+![Revisit a visit](/readme_images/revisit.png)
+### Visitor summary
+![Visitor summary](/readme_images/summary.png)
 
 ### Useful links
 [Google Drive](https://drive.google.com/drive/folders/19QWEDkNJqjvCK_xBAprgXK5Eo-fnBnlB?usp=sharing>)  
@@ -35,13 +41,12 @@ We decided to generate charts for the statistics, so we used CanavasJS library t
 * Database, Daniele and Federico designed and implemented the database structure and Alexandru helped formatting the csv files with AWK scripts
 * Dynamic Web Project, Alexandru implemented the structure of the project, Daniele and Federico reviewed the code and made some tweaks
 * Charts, Federico and Daniele used CanavsJS to render the statistics, coding the **Controller** classes and JSP pages
-* Amazon AWS, *da scrivere*
+* Graph, Federico got all the POIs position with a script, Alexandru created the graph and applied Dijkstra algorithm
+* Points animation, Federico and Daniele made the animation between points
+* Amazon AWS, Daniele deployed the project
 ### Challenges/problems encountered
-The main problem was to implement the *Revisit a visit* feature and we tried to do it with JavaScript.
-<dl>
-<dt>JavaScript problem</dt>
-<dd>Given the museum floor map, our idea was to get all the POIs position from the image, create a graph introducing auxiliary nodes between POI nodes to avoid collisions with the walls and apply a pathfinding algorithm, that given a POI list of a visitor it will show on the map its movement. The first problem was getting all the positions, so we wrote a script that prints the position of the cursor in an image on mouse click, but this is highly dependent on the size of the image because the coordinates of every position changes. The second problem was to animate a point on an image, we tried to code it, but even reading some StackOverflow discussions, it didn't work.</dd>
-</dl>
+The main problem was to implement the *Revisit a visit* feature.  
+Given the museum floor map, we got all the POIs position from the image using a JavaScript script, create a graph introducing auxiliary nodes between POI nodes to avoid collisions with the walls and apply a pathfinding algorithm using Hipster4J library, that given a POI list of a visitor it will show on the map its movement.
 
 ### What did we get from this assignment
 Most of the patterns we used to implement this service was already studied with our Prof. Paolo Merialdo in his course **Sistemi Informativi sul Web**. The new things that we learned is coding in JavaScript, making animation and charts.

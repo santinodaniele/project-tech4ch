@@ -29,6 +29,7 @@
 		<li>
 			<ul id="features" class="sub-menu collapse ${fn:contains(pageContext.request.requestURI,'features') ? 'in' : ''}">
 				<li><a href="${pageContext.request.contextPath}/revisit">Revisit a visit</a></li>
+				<li><a href="${pageContext.request.contextPath}/summary">Visitor summary</a></li>
 			</ul>
 		</li>
 		<!--  /features -->

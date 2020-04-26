@@ -39,7 +39,7 @@ public class PresentationGenerator {
 		Presentation religionAndCult = new Presentation("ReligionAndCult");
 		Presentation carpenterTools = new Presentation("CarpenterTools");
 		Presentation shipFront = new Presentation("ShipFront");
-		Presentation clayAmphora = new Presentation("ClayAmphora");
+		Presentation clayAmphorae = new Presentation("ClayAmphorae");
 		Presentation importedPottery = new Presentation("ImportedPottery");
 		Presentation shipEntrance7 = new Presentation("ShipEntrance7");
 		Presentation jerusalemPhoto = new Presentation("JerusalemPhoto");
@@ -86,7 +86,7 @@ public class PresentationGenerator {
 		presentationList.add(religionAndCult);
 		presentationList.add(carpenterTools);
 		presentationList.add(shipFront);
-		presentationList.add(clayAmphora);
+		presentationList.add(clayAmphorae);
 		presentationList.add(importedPottery);
 		presentationList.add(shipEntrance7);
 		presentationList.add(jerusalemPhoto);

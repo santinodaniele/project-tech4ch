@@ -30,8 +30,6 @@ for(Position p : visitor1path){
 	fin2.add(p.getY());
 	fin.add(fin2);
 }
-
-
 %>
 <script>
 

@@ -9,8 +9,14 @@ import org.springframework.web.servlet.ModelAndView;
 public class FeatureController {
 	
 	@RequestMapping(value = "/revisit", method = RequestMethod.GET)
-	public ModelAndView BubbleVisitors() {
+	public ModelAndView RevisitFeature() {
 		ModelAndView modelAndView = new ModelAndView("Features/Revisit");
+		return modelAndView;
+	}
+	
+	@RequestMapping(value = "/summary", method = RequestMethod.GET)
+	public ModelAndView SummaryFeature() {
+		ModelAndView modelAndView = new ModelAndView("Features/Summary");
 		return modelAndView;
 	}
 }

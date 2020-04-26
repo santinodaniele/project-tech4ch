@@ -39,6 +39,7 @@ public class MuseumGenerator {
 		museum.setVisitorList(visitorGen.initVisitors());
 		museum.setPresentationList(presentationGen.initPresentation());
 		museum.setGroup2Visitor(visitorGen.createVisitorGroup(museum.getVisitorList()));
+		museum.setPresentationList(museumGetGroupPerPresentation());
 	}
 	
 	public static ArrayList<Poi> museumGetPoiStats(){
@@ -64,12 +65,9 @@ public class MuseumGenerator {
 
 	public static ArrayList<Position> getVisitorPath(String index){
 		int visitorId = 0;
-		if(index == null) {
-			visitorId = 1;
-		}
-		else {
-			visitorId = Integer.parseInt(index);
-		}
+		if(index == "" || index == null) visitorId = 1;
+		else if (Integer.parseInt(index) >= museum.getVisitorList().size()) visitorId = 1;
+		else visitorId = Integer.parseInt(index);
 		return VisitorPath.getVisitorPath(museum.getVisitorList().get(visitorId));
 	}
 
@@ -79,8 +77,15 @@ public class MuseumGenerator {
 	
 	public static ArrayList<Presentation> museumGetGroupPerPresentation(){
 		museumStats.getGroupNumberPerPresentation(museum.getGroup2Visitor(), museum.getPresentationList());
-		visitorStats.getGroupStats(museum.getGroup2Visitor().get(17), museum.getPresentationList(), museum.getGroup2Visitor());		//TODO da modificare
 		return museum.getPresentationList();
+	}
+	
+	public static String museumGetVisitorSummary(String index) {
+		int groupId = 0;
+		if(index == "" || index == null) groupId = 1;
+		else if(Integer.parseInt(index) >= museum.getGroup2Visitor().keySet().size()) groupId = 1;
+		else groupId = Integer.parseInt(index);
+		return visitorStats.getGroupStats(museum.getGroup2Visitor().get(groupId), museum.getPresentationList(), museum.getGroup2Visitor());
 	}
 
 }
